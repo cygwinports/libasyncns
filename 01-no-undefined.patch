@@ -1,0 +1,10 @@
+--- origsrc/libasyncns-0.8/m4/attributes.m4	2009-10-14 17:43:45.000000000 -0500
++++ src/libasyncns-0.8/m4/attributes.m4	2012-10-25 15:34:30.735534800 -0500
+@@ -110,6 +110,7 @@ AC_DEFUN([CC_NOUNDEFINED], [
+      dnl are requested, as different implementations are present; to avoid problems
+      dnl use -Wl,-z,defs only for those platform not behaving this way.
+      *-freebsd*) ;;
++     *-cygwin*) LDFLAGS_NOUNDEFINED="-no-undefined" ;;
+      *)
+         dnl First of all check for the --no-undefined variant of GNU ld. This allows
+         dnl for a much more readable commandline, so that people can understand what
